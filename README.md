@@ -1,8 +1,9 @@
-# Automatisation de la Création de Contacts avec Google Apps Script (Lien de l'article : )
+# Automatisation de la Création de Contacts avec Google Apps Script
 
 ## Introduction
 
-Bienvenue dans ce projet de Google Apps Script qui automatise la création de contacts téléphonique à partir des réponses d'un formulaire Google Forms. Ce script est idéal pour les événements d'envergure, les conférences, les ateliers, et bien d'autres scénarios où la collecte et la gestion des contacts sont essentielles.
+Bienvenue dans ce projet de Google Apps Script qui automatise la création de contacts téléphonique à partir des réponses d'un formulaire Google Forms. Ce script est idéal pour les événements d'envergure, les conférences, les ateliers, et bien d'autres scénarios où la collecte et la gestion des contacts sont essentielles.<br>
+Lien de l'article : https://medium.com/@abdelmfossa/automatiser-la-sauvegarde-des-contacts-avec-apps-script-et-google-forms-2dfa4478bc3f
 
 ## Fonctionnalités
 
