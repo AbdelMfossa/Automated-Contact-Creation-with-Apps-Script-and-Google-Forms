@@ -1,24 +1,24 @@
-// Constante pour le nom du groupe
-const GROUPE = "Séminaire";
+// Variable pour le nom du groupe
+var groupName = "Séminaire";
+// Constante pour le nom de la colonne de validation (Statut)
+const COLONNE_VALIDATION = "E"; // Colonne E
 
-function groupe(nom) {
-  var groupe = ContactsApp.getContactGroup(nom);
+function getOrCreateGroup() {
+  var groupe = ContactsApp.getContactGroup(groupName);
   if (groupe == null) {
+    groupe = ContactsApp.createContactGroup(groupName);
     Logger.log("Groupe créé...");
-    groupe = ContactsApp.createContactGroup(nom);
   }
   return groupe;
 }
 
 // Fonction pour créer un contact
-function creerContact(nom, email, telephone, groupe) {
+function creerContact(nom, email, telephone) {
   var contact = ContactsApp.createContact(nom, "", email);
   contact.setMobilePhone(telephone);
-  contact.addToGroup(groupe(GROUPE));
+  contact.addToGroup(getOrCreateGroup());
 }
 
-// Constante pour le nom de la colonne de validation
-const COLONNE_VALIDATION = "E"; // Colonne E
 
 // Fonction pour parcourir les données de la feuille Google
 function parcourirFeuille() {
@@ -40,7 +40,7 @@ function parcourirFeuille() {
     if (statut == "OK") {
       Logger.log("PASS");
     } else {
-      creerContact(nom, email, telephone, groupe);
+      creerContact(nom, email, telephone);
       feuille.getRange(COLONNE_VALIDATION + (i+2)).setValue("OK");
       Logger.log("SUCCESS");
     }
